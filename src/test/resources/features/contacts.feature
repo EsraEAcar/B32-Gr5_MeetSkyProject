@@ -22,3 +22,4 @@
        And select "Abeer" from the list
        And user click on delete from the menu
        Then "Abeer" wil deleted from the conatct list
+

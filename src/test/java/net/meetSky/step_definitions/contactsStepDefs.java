@@ -98,7 +98,6 @@ public class contactsStepDefs {
        // BrowserUtils.waitForClickablility(contactspage.menu,2);
         BrowserUtils.clickWithJS(contactspage.menu);
 
-
     }
 
 
