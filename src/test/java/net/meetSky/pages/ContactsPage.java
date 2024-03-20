@@ -43,11 +43,13 @@ public class ContactsPage {
     @FindBy (xpath = "//div[@role='listitem']")
     public WebElement contact;
 
+
     @FindBy (xpath = "//button[@class='icon vue-button action-item__menutoggle action-item__menutoggle--default-icon']")
     public WebElement menu;
 
-    @FindBy (xpath = "//div[@id='popover_ti240x9p82']")
-    public WebElement menu2;
+
+    @FindBy (xpath = "//button[@class='action-item action-item--single property__actions undefined undefined has-tooltip']")
+    public WebElement deleteiqion;
 
     @FindBy (xpath = "//button[@class='action-button focusable']")
     public WebElement deletebutton;

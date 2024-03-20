@@ -12,6 +12,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import net.meetSky.utilities.BrowserUtils;
+import org.openqa.selenium.interactions.Actions;
 
 
 import java.util.ArrayList;
@@ -96,8 +97,11 @@ public class contactsStepDefs {
     public void user_click_on_delete_from_the_menu() {
 
        // BrowserUtils.waitForClickablility(contactspage.menu,2);
+        //BrowserUtils.switchToWindow("https://qa.meetsky.net/index.php/apps/contacts/All%20contacts/4b68a6a7-2274-47b0-aa58-5dd41822dfee~contacts");
+      // BrowserUtils.hover(contactspage.menu);
         BrowserUtils.clickWithJS(contactspage.menu);
     }
+
 
 
     @Then("{string} wil deleted from the conatct list")
