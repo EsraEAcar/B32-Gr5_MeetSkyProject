@@ -30,7 +30,7 @@ public abstract class BasePage {
 
     }
 
-    @FindBy(xpath = "(//a[contains(.,'Talk')])[1]")
+    @FindBy(xpath = "(//a[contains(.,'Talk')])[1]") // //xpath[@aria-label='Talk']
     public List<WebElement> talk;
 
     @FindBy(xpath = "(//a[contains(.,'Activity')])[1]")
