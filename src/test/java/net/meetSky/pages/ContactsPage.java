@@ -44,17 +44,31 @@ public class ContactsPage {
     public WebElement contact;
 
 
-    @FindBy (xpath = "//button[@class='icon vue-button action-item__menutoggle action-item__menutoggle--default-icon']")
+    @FindBy (xpath = "(//button[@class = 'icon vue-button action-item__menutoggle action-item__menutoggle--default-icon'])[4]")
     public WebElement menu;
 
-
-    @FindBy (xpath = "//button[@class='action-item action-item--single property__actions undefined undefined has-tooltip']")
-    public WebElement deleteiqion;
-
-    @FindBy (xpath = "//button[@class='action-button focusable']")
+    @FindBy (xpath = "(//button[@class='action-button focusable'])[8]")
     public WebElement deletebutton;
 
 
+    @FindBy (xpath = "//p[contains(text(),'Select a contact on the list to begin')]")
+    public WebElement deletedheader;
 
+    @FindBy (xpath = "//button[@class='icon vue-button action-item__menutoggle icon-picture-force-white']")
+
+    public WebElement imgdawnload;
+
+
+    @FindBy (xpath = "(//button[@class='action-button focusable'])[8]")
+    public WebElement choosefromfile;
+
+    @FindBy (xpath = "//tr[contains(@data-entryname,'.jpg')]")
+    public WebElement img;
+
+    @FindBy (xpath = "//button[text()='Choose']")
+    public WebElement choose;
+
+    @FindBy (xpath = "//img[contains(@src,'http')]")
+    public WebElement contactimg;
 
 }

@@ -1,4 +1,4 @@
-    #@contacts
+    @contacts
     Feature: Contacts Module Functionality
 
     Background: User is already logged in
@@ -17,11 +17,16 @@
           Then the user should see the same number in the side of Not grouped tab
 
 
-      @contacts
+
     Scenario:User can delete Contact name he want
        When user search for the "Abeer "
        And select "Abeer" from the list
        And user click on delete from the menu
-       Then "Abeer" wil deleted from the conatct list
+       Then "Select a contact on the list to begin" will appear after the contact deleted from the conatct list
 
 
+Scenario: User can change the profile picture of any contact with a previously uploaded picture by using “Choose from files” option
+  When user click on img button
+  And user click Choose from Files button
+  And select file from file folder and click Choose button
+  Then user picture changed

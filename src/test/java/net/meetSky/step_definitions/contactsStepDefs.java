@@ -96,16 +96,47 @@ public class contactsStepDefs {
     @When("user click on delete from the menu")
     public void user_click_on_delete_from_the_menu() {
 
-       // BrowserUtils.waitForClickablility(contactspage.menu,2);
-        //BrowserUtils.switchToWindow("https://qa.meetsky.net/index.php/apps/contacts/All%20contacts/4b68a6a7-2274-47b0-aa58-5dd41822dfee~contacts");
-      // BrowserUtils.hover(contactspage.menu);
+
         BrowserUtils.clickWithJS(contactspage.menu);
+        contactspage.deletebutton.click();
     }
 
 
+    @Then("{string} will appear after the contact deleted from the conatct list")
+    public void will_appear_after_the_contact_deleted_from_the_conatct_list(String expectedheader) {
 
-    @Then("{string} wil deleted from the conatct list")
-    public void wil_deleted_from_the_conatct_list(String conactname) {
+        Assert.assertEquals(contactspage.deletedheader.getText(),expectedheader);
+    }
+
+    @When("user click on img button")
+    public void user_click_on_img_button() {
+       contactspage.imgdawnload.click();
+    }
+    @When("user click Choose from Files button")
+    public void user_click_choose_from_files_button() {
+
+        contactspage.choosefromfile.click();
+    }
+    @When("select file from file folder and click Choose button")
+    public void select_file_from_file_folder_and_click_choose_button() {
+
+        BrowserUtils.sleep(2);
+        BrowserUtils.waitForClickablility(contactspage.img,2);
+        BrowserUtils.clickWithJS(contactspage.img);
+        BrowserUtils.waitForClickablility(contactspage.choose,2);
+        BrowserUtils.clickWithJS(contactspage.choose);
+
+        //contactspage.choose.click();
+
+
+
+
+    }
+    @Then("user picture changed")
+    public void user_picture_changed() {
+        Driver.getDriver().navigate().refresh();
+       // contactspage.contactimg.isDisplayed();
+
 
     }
 
