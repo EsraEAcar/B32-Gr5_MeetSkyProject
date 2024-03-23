@@ -36,24 +36,25 @@ Feature: Tasks Module Functionality
     Given user clicks on School list
     When user clicks on the checkbox next to task name Homeworks
     Then user sees on the left side Completed list
-    And the counter next to it is showing the number
 
 
 
 #===============================AC04=======================================
 
-@wip
+
   Scenario: AC04==> User can add any task to the list of important tasks by clicking on the star icon on the right side of task line
     When user chooses any task and clicks on the star icon next to it
     Then user sees that on the left side the new Important list appears
-    And the counter next is showing the number
+
 
 
 
 #===============================AC05=======================================
 
-
+  @wip
   Scenario: AC05==> User can see the number of all uncompleted tasks next to the Current tab
+    When user clicks on the University link
+    Then the counter next to it shows the number of uncompleted tasks
 
 
 

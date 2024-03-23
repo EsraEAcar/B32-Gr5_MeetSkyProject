@@ -39,6 +39,9 @@ public class TasksPage extends BasePage{
     @FindBy(css = "span[title='Completed']")
     public WebElement completedList;
 
+    @FindBy()
+    public WebElement counterCompleted;
+
     //==============================AC04=======================================
 
     @FindBy(xpath = "(//span[@class='material-design-icon star-icon'])[1]")
@@ -47,9 +50,15 @@ public class TasksPage extends BasePage{
     @FindBy(css = "span[title='Important']")
     public WebElement importantList;
 
+    @FindBy()
+    public WebElement counterImportant;
+
 
 
     //==============================AC05=======================================
+
+    @FindBy(xpath = "(//div[@class='app-navigation-entry__counter'])[8]")
+    public WebElement counterUncompleted;
 
 
 

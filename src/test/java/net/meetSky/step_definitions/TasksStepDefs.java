@@ -116,10 +116,18 @@ public class TasksStepDefs {
         Assert.assertTrue(tasksPage.importantList.isDisplayed());
     }
 
-    @And("the counter next is showing the number")
-    public void theCounterNextIsShowingTheNumber() {
-    }
 
 
     //==============================AC05=======================================
+
+    @When("user clicks on the University link")
+    public void userClicksOnTheCurrentTab() {
+        tasksPage.newList.click();
+    }
+
+    @Then("the counter next to it shows the number of uncompleted tasks")
+    public void theCounterNextToItShowsTheNumberOfUncompletedTasks() {
+        String uncompletedTasks = tasksPage.counterUncompleted.getText();
+        System.out.println("uncompletedTasks = " + uncompletedTasks);
+    }
 }
