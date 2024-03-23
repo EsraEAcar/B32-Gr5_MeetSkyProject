@@ -54,14 +54,9 @@ public class TasksPage extends BasePage{
     public WebElement counterImportant;
 
 
-
     //==============================AC05=======================================
 
     @FindBy(xpath = "(//div[@class='app-navigation-entry__counter'])[8]")
     public WebElement counterUncompleted;
-
-
-
-
 
 }

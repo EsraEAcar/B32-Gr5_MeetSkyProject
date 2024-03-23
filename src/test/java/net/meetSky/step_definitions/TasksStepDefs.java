@@ -91,6 +91,7 @@ public class TasksStepDefs {
     @Given("user clicks on the checkbox next to task name Homeworks")
     public void userClicksOnTheCheckboxNextToTaskNameHomeworks() {
         tasksPage.checkboxTask.click();
+
     }
 
     @And("user sees on the left side Completed list")

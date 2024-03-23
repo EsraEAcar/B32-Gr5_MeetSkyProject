@@ -20,7 +20,6 @@ Feature: Tasks Module Functionality
 
 #===============================AC02=======================================
 
-
   Scenario: AC02==> User can create a new task
     Given user clicks on new created list name School
     When user clicks to Add a task to School Link
@@ -28,30 +27,22 @@ Feature: Tasks Module Functionality
     Then user sees the created new task below
 
 
-
 #===============================AC03=======================================
-
 
   Scenario: AC03==> User can add any task to the list of completed tasks
     Given user clicks on School list
     When user clicks on the checkbox next to task name Homeworks
     Then user sees on the left side Completed list
 
-
-
 #===============================AC04=======================================
-
 
   Scenario: AC04==> User can add any task to the list of important tasks by clicking on the star icon on the right side of task line
     When user chooses any task and clicks on the star icon next to it
     Then user sees that on the left side the new Important list appears
 
-
-
-
 #===============================AC05=======================================
 
-  @wip
+
   Scenario: AC05==> User can see the number of all uncompleted tasks next to the Current tab
     When user clicks on the University link
     Then the counter next to it shows the number of uncompleted tasks
