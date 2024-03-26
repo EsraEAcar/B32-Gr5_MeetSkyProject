@@ -54,14 +54,16 @@ public abstract class BasePage {
     @FindBy(xpath = "(//a[contains(.,'Tasks')])[1]")
     public WebElement tasks;
 
-    @FindBy(xpath = "(//a[contains(.,'Calendar')])[1]")
-    public WebElement calender;
 
     @FindBy(xpath = "(//a[contains(.,'Notes')])[1]")
     public WebElement notes;
 
     @FindBy(xpath = "(//a[contains(.,'Contacts')])[1]")
     public WebElement deck;
+
+    @FindBy(xpath = "(//a[contains(.,'Calendar')])[1]")
+    public WebElement calender;
+
 
     @FindBy(id = "expand")
     public WebElement logoutButton;
