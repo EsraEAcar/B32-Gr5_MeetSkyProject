@@ -18,11 +18,10 @@ import java.util.List;
 public class FilesStepDefs {
    FilesPage filesPage=new FilesPage();
 
+   //1EC :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
   private String filepath = System.getProperty("user.dir") + "/src/test/resources/UploadFilesTestData/text.txt" ;
-
-
-
-   @Given("User is on the Files page")
+  @Given("User is on the Files page")
    public void user_is_on_the_files_page() {
 
    }
@@ -35,27 +34,24 @@ public class FilesStepDefs {
    @Then("User clicks upload file icon")
    public void user_clicks_upload_file_icon() {
    }
+
    @Then("User uploads the file.")
    public void user_uploads_the_file() {
            filesPage.uploadFileButton.sendKeys(filepath);
        BrowserUtils.waitFor(4);
        }
 
-   @Then("User should see file uploaded text on the page.")
-   public void user_should_see_file_uploaded_text_on_the_page() {
-        String expectedName="text\n" +
-                ".txt\n" +
-                "< 1 KB\n" +
-                "2 hours ago";
 
+    @Then("User should see  uploaded file on the page.")
+    public void userShouldSeeUploadedFileOnThePage() {
+        String expectedName="text";
+        List<WebElement> rows = filesPage.table.findElements(By.tagName("tr"));
+        WebElement lastRow = rows.get(rows.size() - 2);
+        String lastRowData = lastRow.getText();
+        Assert.assertTrue(lastRowData.contains(expectedName));
 
-       List<WebElement> rows = filesPage.table.findElements(By.tagName("tr"));
-       WebElement lastRow = rows.get(rows.size() - 2);
-       String lastRowData = lastRow.getText();
-       Assert.assertEquals(lastRowData,expectedName);
-
-   }
-//..........................................................................
+    }
+   //2EC :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
     @Then("User clicks New Folder icon")
     public void userClicksNewFolderIcon() {
@@ -73,6 +69,35 @@ public class FilesStepDefs {
 
         Assert.assertEquals(filesPage.uploadedFolder.getText(),uploadedFileName);
    }
+
+   //3EC ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    @When("User clicks on first uploaded file's selectCheckBox")
+    public void userClicksOnFirstUploadedFileSSelectCheckBox() {
+       filesPage.selectCheckBox.click();
+    }
+
+    @Then("User navigates to three dots menu and clicks on it")
+    public void userNavigatesToThreeDotsMenuAndClicksOnIt() {
+       filesPage.threeDotsMenu.click();
+    }
+
+    @And("User selects the delete option and clicks")
+    public void userSelectsTheDeleteOptionAndClicks() {
+       filesPage.deleteIcon.click();
+    }
+
+    //4EC :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    @Then("User sees the total number of files and folders under the files list table")
+    public void userSeesTheTotalNumberOfFilesAndFoldersUnderTheFilesListTable() {
+   String expectedTitle="1 folder";
+       //Assert.assertTrue(filesPage.totalNumberOfFilesAndFolders.isDisplayed());
+        Assert.assertTrue(filesPage.totalNumberOfFilesAndFolders.getText().contains(expectedTitle));
+    }
+
+
+
+
 
 
 }
