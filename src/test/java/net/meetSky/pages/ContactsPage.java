@@ -71,4 +71,6 @@ public class ContactsPage {
     @FindBy (xpath = "//img[contains(@src,'http')]")
     public WebElement contactimg;
 
+
+
 }
